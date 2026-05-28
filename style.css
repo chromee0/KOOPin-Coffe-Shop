@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f5efe6;
+  color: #720d0d;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background-color: #720d0d; /* FIX: hapus yang error */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 8%;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+  color: #6b4f4f;
+}
+
+.hero-text button {
+  padding: 10px 20px;
+  background-color: #720d0d;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #a61b1b;
+}
+
+.hero img {
+  width: 300px;
+  border-radius: 15px;
+}
+
+/* MENU */
+.menu {
+  padding: 50px 8%;
+  text-align: center;
+}
+
+.menu h2 {
+  margin-bottom: 30px;
+}
+
+.menu-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: black;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* CONTACT */
+.contact {
+  padding: 50px 8%;
+  text-align: center;
+  background-color: #e6d3c3;
+}
+
+.contact p {
+  margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #720d0d;
+  color: white;
+}
+
+/* ORDER BOX */
+.order-box {
+  background: #fff;
+  padding: 25px;
+  width: 320px;
+  margin: 100px auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.menu-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.order-box h2 {
+  margin-bottom: 15px;
+  color: #6b1d1d;
+}
+
+.order-box input, 
+.order-box select {
+  width: 85%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.order-box button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 85%;
+  background: #6b1d1d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.order-box button:hover {
+  background: #8a2a2a;
+}
+
+.total {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* STRUK */
+.struk {
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  color: black;
+  font-family: monospace;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line {
+  border-top: 1px dashed black;
+  margin: 10px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+/* BUTTON GLOBAL */
+.btn {
+  background: #720d0d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* RESPONSIVE (HP FIX) */
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero img {
+    width: 90%;
+  }
+
+  .menu-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .order-box,
+  .struk {
+    width: 90%;
+    margin: 50px auto;
+  }
+}

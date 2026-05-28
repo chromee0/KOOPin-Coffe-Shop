@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="order-box">
+
+  <h2>Detail Pesanan</h2>
+
+  <img id="gambar" class="menu-img">
+
+  <p id="menu"></p>
+  <p>Harga: <span id="harga"></span></p>
+
+  <label>Jumlah:</label>
+  <input type="number" id="qty" value="1" min="1">
+
+  <p class="total">Total: <span id="total"></span></p>
+
+  <button onclick="checkout()">Order Sekarang</button>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const menu = params.get("menu") || "Menu";
+const harga = parseInt(params.get("harga")) || 0;
+
+const gambar = document.getElementById("gambar");
+
+// gambar
+if (menu === "Latte") gambar.src = "assets/Late.jpg";
+else if (menu === "Americano") gambar.src = "assets/americanoo.png";
+else if (menu === "Cappuccino") gambar.src = "assets/Capucino.png";
+
+document.getElementById("menu").innerText = menu;
+
+const qtyInput = document.getElementById("qty");
+const totalText = document.getElementById("total");
+
+function formatRupiah(angka) {
+  return "Rp " + angka.toLocaleString("id-ID");
+}
+
+document.getElementById("harga").innerText = formatRupiah(harga);
+
+function updateTotal() {
+  const qty = parseInt(qtyInput.value) || 1;
+  totalText.innerText = formatRupiah(harga * qty);
+}
+
+qtyInput.addEventListener("input", updateTotal);
+updateTotal();
+
+function checkout() {
+  const qty = parseInt(qtyInput.value) || 1;
+  const total = harga * qty;
+
+  window.location.href = `struk.html?menu=${menu}&qty=${qty}&total=${total}`;
+}
+</script>
+
+</body>
+</html>

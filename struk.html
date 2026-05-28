@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Struk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="struk">
+
+  <h2>KOOPin Coffee</h2>
+  <p class="center">☕ Bukti Pembelian</p>
+
+  <div class="line"></div>
+
+  <div class="row">
+    <span>Menu</span>
+    <span id="menu"></span>
+  </div>
+
+  <div class="row">
+    <span>Qty</span>
+    <span id="qty"></span>
+  </div>
+
+  <div class="row">
+    <span>Harga</span>
+    <span id="harga"></span>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="row total">
+    <span>Total</span>
+    <span id="total"></span>
+  </div>
+
+  <div class="line"></div>
+
+  <p class="center">Terima kasih sudah membeli 🙏</p>
+  <p class="center" id="tanggal"></p>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const menu = params.get("menu");
+const qty = parseInt(params.get("qty")) || 1;
+const total = parseInt(params.get("total")) || 0;
+
+document.getElementById("menu").innerText = menu;
+document.getElementById("qty").innerText = qty;
+
+const harga = total / qty;
+
+function rupiah(x){
+  return "Rp " + x.toLocaleString("id-ID");
+}
+
+document.getElementById("harga").innerText = rupiah(harga);
+document.getElementById("total").innerText = rupiah(total);
+
+document.getElementById("tanggal").innerText =
+  new Date().toLocaleString("id-ID");
+</script>
+
+</body>
+</html>
